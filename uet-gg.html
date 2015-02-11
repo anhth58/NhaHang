@@ -1,0 +1,65 @@
+﻿<html>
+	<title> UET-GG Restaurant </title>
+	<head>
+	</head>
+
+	<body>
+		<h1 style="color:#210995;"> Chào mừng các bạn đã đến với nhà hàng chúng tôi </h1>
+		<hr/>
+		<br/>
+		<h3> Xin mời chọn thực đơn </h3>
+
+		<form action="list.php" method="post">
+			<fieldset>
+			<legend> Tên khách hàng: </legend>
+				<input type="text" name="name">
+			</fieldset>
+
+			<fieldset>
+			<legend> Mời chọn món ăn: </legend>
+			<ul>
+				<li> Gà <input type="checkbox" name="ga">  </li>
+				<li> Vịt <input type="checkbox" name="vit">  </li>
+				<li> Dê <input type="checkbox" name="de">  </li>
+			</ul>
+			</fieldset>
+
+			<fieldset>
+			<legend> Mời chọn đồ uống: </legend>
+			<ul>
+				<li> Cocacola <input type="text" name="coca" value="0"> </li>
+				<li> Pepsi    <input type="text" name="pepsi" value="0"> </li>
+				<li> Seven Up <input type="text" name="sevenup" value="0"> </li>
+			</ul>
+			</fieldset>
+
+			<input type="submit" value="XONG">
+			<input type="reset" value="CHON LAI">
+		</form>
+
+
+		
+		<!--<form name="list" action="waiting.php" method="post" opsubmit="return checkInput();">-->
+<!--  
+ 		<form action="waiting.php" method="post">
+ 			<ul>
+ 				<p> Moi chon mon an:<br/> </p>
+ 				<li> <input type="checkbox" name="ga"/> Lau Ga <br> </li>
+ 				<li> <input type="checkbox" name="vit" value="Lau Vit" /> Lau Vit <br> </li>
+ 				<li> <input type="checkbox" name="de" value="Lau De" /> Lau De <br> </li>
+ 			</ul>
+ 			<ol>
+ 				<p> Moi chon do uong:<br/> </p>
+ 				<li> Cocacola <input type="checkbox" name="coca" value="Coca") /> <br/> </li>
+ 				<li> Pepsi <input type="checkbox" name="pepsi" value="Pepsi" /> <br/> </li>
+ 				<li> Seven Up <input type="text" name="sevenup"/> (chai) <br/> </li>
+ 				<li> Fanta <input type="button" name="fanta" value="So Luong" onclick="nhapSL()" <br/> </li>
+ 			</ol>
+ 
+ 			<input type="button" name="OK" value = "XONG" onclick="waiting()" />
+ 			<input type="submit" name="OK" value="GUI" />			
+ 			<input type="reset" name="Reset" value = "CHON LAI" />
+ 		</form>
+ -->
+	</body>
+</html>
