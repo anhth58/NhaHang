@@ -1,0 +1,54 @@
+<template name = "order">
+    {{#if currentUser}}
+	<div class = "container">
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>
+                        <div class = "col-xs-3">Dish</div>
+                        <div class = "col-xs-3 right-align-text">Price</div>
+                        <div class = "col-xs-3 right-align-text">Number</div>
+                        <div class = "col-xs-3 right-align-text">Money</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dish}}
+                    <tr>
+                        <td>
+                            <div class = "col-xs-3">
+                                <span class = "name" id = "name{{thisId}}">{{name}}</span>
+                            </div>
+                            <div class = "col-xs-3 right-align-text">
+                                <span class = "price" id = "price{{thisId}}">${{price}}</span>
+                            </div>
+                            <div class = "col-xs-3">
+                                <form id = "numberCallForm" style = "float: right;">
+                                    <input type = "number" min = 0 value = 0 class = "form-control input-sm numberCall" style = "width: 50px;" id = "number{{thisId}}">
+                                </form>
+                            </div>
+                            <div class = "col-xs-3 right-align-text">
+                                $<span id = "money{{thisId}}">0.00</span>
+                            </div>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>
+                        <div class = "col-xs-9">Total</div>
+                        <div class = "col-xs-3 right-align-text">$<span id = "total">0.00</span></div>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <div style = "text-align: center">
+            <button class = "btn btn-default btn-lg" id = "submitOrder">
+                <span class = "glyphicon glyphicon-earphone"></span>
+                <span>Order</span>
+            </button>
+        </div>
+	</div>
+    {{/if}}
+</template>

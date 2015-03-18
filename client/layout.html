@@ -1,0 +1,60 @@
+<template name = "layout">
+	<nav class = "navbar navbar-default">
+	    <div class = "container">
+	        <div class = "navbar-header">
+	            <a class = "navbar-brand" href = "{{#if currentUser}}{{pathFor 'menu'}}{{else}}/{{/if}}">SMARES</a>
+	        </div>
+	        <div>
+	        	{{#if currentUser}}
+			        <ul class = "nav navbar-nav">
+			        	<li class = {{activeBar 'Menu'}}>
+			        		<a href = "{{pathFor 'menu'}}">Menu</a>
+			        	</li>
+			        	<li class = {{activeBar 'Order'}}>
+			        		<a href = "{{pathFor 'order'}}">Order</a>
+			        	</li>
+			        	<li class = {{activeBar 'Cooking'}}>
+			        		<a href = "{{pathFor 'cooking'}}">Cooking</a>
+			        	</li>
+			        </ul>
+	            {{/if}}
+	            <ul class = "nav navbar-nav navbar-right">
+	            	{{#with currentUser}} 
+	            		<li class = "dropdown">
+	            			<a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+	            				<span class = "glyphicon glyphicon-user"></span>
+	            				<span>{{username}}</span>
+	            				<span class="caret"></span>
+	            			</a>
+	            			<ul class = "dropdown-menu">
+	            				<li>
+	            				</li>
+	            				<li class = "divider"></li>
+	            				<li>
+	            					<a href = "/" id = "logoutButton">
+	            						<span class = "glyphicon glyphicon-log-out"></span>
+	            						<span>Logout </span>
+	            					</a>
+	            				</li>
+	            			</ul>
+	            		</li>
+	            	{{else}}
+                        <li>
+                            <a href = "{{pathFor 'register'}}">
+                                <span class = "glyphicon glyphicon-edit"></span>
+                                <span>Register</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "{{pathFor 'login'}}">
+                                <span class = "glyphicon glyphicon-log-in"></span>
+                                <span>Login</span>
+                            </a>
+                        </li>
+	            	{{/with}}
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+	{{> yield}}
+</template>

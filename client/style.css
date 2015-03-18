@@ -1,0 +1,11 @@
+.login-icon {
+    font-size: 4em; 
+    color: gray;  
+    border-radius: 100%; 
+    padding: 10px; 
+    border: 1px solid gray; 
+    background: white;
+}
+.right-align-text {
+    text-align: right;
+}

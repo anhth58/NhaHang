@@ -1,0 +1,57 @@
+<template name = "register">
+    {{#unless currentUser}}
+    <div class = "col-md-6 col-md-offset-3">
+        <div class = "panel panel-default">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">Register</h3>
+            </div>
+            <div class = "panel-body">
+                <form class = "form-horizontal">
+                    <div class = "form-group">      
+                        <label class = "col-md-3 control-label" id = "username">Username</label>
+                        <div class = "col-md-9  has-feedback {{#if isValid 'regName'}}has-success{{/if}} {{#if isInvalid 'regName'}}has-error{{/if}}">
+                            <input type = "text" class = "form-control" name = "regName" id = "regName" data-toggle = "popover" data-content = "Username may only contain lowercase letters ('a' - 'z'), digits ('0' - '9'), underscores ('_') and cannot begin or end with a underscore, and must be at least 6 characters" data-placement = "top" data-trigger = "focus">
+                            {{#if isValid 'regName'}}
+                                <span class = "glyphicon glyphicon-ok form-control-feedback"></span>
+                            {{/if}}
+                            {{#if isInvalid 'regName'}}
+                                <span class = "glyphicon glyphicon-remove form-control-feedback"></span>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class= "form-group">
+                        <label class = "col-md-3 control-label">Password</label>
+                        <div class = "col-md-9 has-feedback {{#if isValid 'regPass'}}has-success{{/if}} {{#if isInvalid 'regPass'}}has-error{{/if}}">
+                            <input type = "password" class = "form-control" name = "password" id = "regPass" data-toggle = "popover" data-content = "Password must be at least 8 characters" data-placement = "bottom" data-trigger = "focus">
+                            {{#if isValid 'regPass'}}
+                                <span class = "glyphicon glyphicon-ok form-control-feedback"></span>
+                            {{/if}}
+                            {{#if isInvalid 'regPass'}}
+                                <span class = "glyphicon glyphicon-remove form-control-feedback"></span>
+                            {{/if}}
+                        </div>
+                    </div>  
+                    <div class= "form-group">
+                        <label class = "col-md-3 control-label">Confirm Password</label>
+                        <div class = "col-md-9 has-feedback {{#if isValid 'regConfirm'}}has-success{{/if}} {{#if isInvalid 'regConfirm'}}has-error{{/if}}">
+                            <input type = "password" class = "form-control" name = "password" id = "regConfirm">
+                            {{#if isValid 'regConfirm'}}
+                                <span class = "glyphicon glyphicon-ok form-control-feedback"></span>
+                            {{/if}}
+                            {{#if isInvalid 'regConfirm'}}
+                                <span class = "glyphicon glyphicon-remove form-control-feedback"></span>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class = "form-group" style = "margin-bottom: 0px">
+                        <span class = "col-xs-8" id = "regError" style = "color: red; text-align: right"></span>
+                        <div class = "col-xs-4">
+                            <button type="submit" class="btn btn-default btn-block">Create Account</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/unless}}
+</template>

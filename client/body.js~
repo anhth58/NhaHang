@@ -1,0 +1,22 @@
+
+Meteor.subscribe('dishesList');
+Meteor.subscribe('ordersList');
+Handlebars.registerHelper('thisId', function() {
+    return this._id;
+});
+Handlebars.registerHelper('price', function() {
+    return (this.price / 100).toFixed(2);
+});
+Template.ordersList.helpers({
+    'order': function() {
+        return Orders.find();
+    },
+});
+Template.ordersList.events({
+    'click #deleteOrder': function() {
+        Meteor.call('removeOrder', this._id);
+    }
+});
+Accounts.ui.config({
+    passwordSignupFields: 'USERNAME_ONLY'
+});

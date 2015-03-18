@@ -1,0 +1,37 @@
+<template name = "login">
+    {{#unless currentUser}}
+    <div class = "col-md-4 col-md-offset-4">
+        <div class = "panel panel-default">
+            <div class = "panel-heading" style = "text-align: center">
+                <span class = "glyphicon glyphicon-user login-icon"></span>
+            </div>
+            <div class = "panel-body">
+                <form class = "form-horizontal">
+                    <div class = "form-group">      
+                        <div class = "col-md-12">
+                            <div class = "input-group">
+                                <div class = input-group-addon><i class = "glyphicon glyphicon-user"></i></div>
+                                <input type = "text" class = "form-control" name = "username" placeholder = "Username" id = "loginName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class= "form-group">
+                        <div class = "col-md-12">
+                            <div class =  "input-group">
+                                <div class = input-group-addon><i class = "glyphicon glyphicon-lock"></i></div>
+                                <input type = "password" class = "form-control" name = "password" placeholder = "Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "form-group" style = "margin-bottom: 0px">
+                        <span class = "col-xs-6" id = "loginError" style = "color: red; text-align: right"></span>
+                        <div class = "col-xs-6">
+                            <button type="submit" class="btn btn-default btn-block">Login</button>    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/unless}}
+</template>
